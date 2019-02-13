@@ -1,0 +1,54 @@
+{
+  "name": "admin",
+  "version": "1.0.0",
+  "description": "itxuye-blog-front",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development next",
+    "start:prod": "cross-env NODE_ENV=production next",
+    "start": "next start -p $PORT",
+    "build": "cross-env NODE_ENV=production next build && PORT=3006 npm start",
+    "deploy": "pm2 start npm --name 'blog-front-next' -- run build --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/itxuye/blog-admin.git"
+  },
+  "keywords": [
+    "typescript",
+    "react",
+    "nextjs",
+    "apollo",
+    "graphql"
+  ],
+  "author": "itxuye",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/itxuye/blog-admin/issues"
+  },
+  "homepage": "https://github.com/itxuye/blog-admin#readme",
+  "dependencies": {
+    "@zeit/next-sass": "^1.0.1",
+    "@zeit/next-typescript": "^1.1.1",
+    "apollo-boost": "^0.1.27",
+    "graphql": "^14.1.1",
+    "isomorphic-unfetch": "^3.0.0",
+    "next": "^8.0.0",
+    "node-sass": "^4.11.0",
+    "prop-types": "^15.7.1",
+    "react": "^16.8.1",
+    "react-apollo": "^2.4.1",
+    "react-apollo-hooks": "^0.3.1",
+    "react-dom": "^16.8.1"
+  },
+  "devDependencies": {
+    "@types/next": "^8.0.0",
+    "@types/node": "^11.9.3",
+    "@types/react": "^16.8.2",
+    "@types/react-dom": "^16.8.0",
+    "@zeit/next-css": "^1.0.1",
+    "cross-env": "^5.2.0",
+    "dotenv-webpack": "^1.7.0",
+    "typescript": "^3.3.3"
+  }
+}
